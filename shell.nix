@@ -5,5 +5,9 @@ in
         buildInputs = with pkgs; [
             rustup
             rust-analyzer
+
+            openssl
+
+            yarn
         ];
     }

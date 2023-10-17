@@ -1,14 +1,10 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+use wasm_bindgen::prelude::*;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+use js_sys::JsString;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+#[wasm_bindgen(method)]
+pub fn parse(out: JsString) -> JsString {
+    let mut out: String = out.into();
+    out.push_str(" bla");
+    out.into()
 }
